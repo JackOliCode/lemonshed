@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Log-In</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('{% static "recipes/images/welcome.jpg" %}');
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+        }
+        .login-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #FFC4EB;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .login-text {
+            font-size: 50px;
+        }
+        .login-button {
+            background-color: rgba(11, 74, 66, 0.1);
+            border: solid;
+            padding: 10px 20px;
+            color: #FFC4EB;
+            width: 20%;
+            font-size: 30px;
+            text-decoration: none;
+
+        }
+        .form_style {
+            width: 100%;
+            font-size: 30px;
+        }
+    </style>    
+</head>
+
+<body>
+    
+    <div class="login-container">
+        <h1> You've successfully logged out. </h1>
+        <a href ="{%url 'login' %}" class="login-button"> Login </a>
+
+</div>
+</body>

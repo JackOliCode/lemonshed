@@ -1,0 +1,279 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Recipe</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgb(11,74,66);
+            background: 
+                linear-gradient(90deg, 
+                rgba(11,74,66,1) 0%, 
+                rgba(252,208,161,0.4) 13%, 
+                rgba(255,255,255,1) 25%, 
+                rgba(255,255,255,1) 50%, 
+                rgba(255,255,255,1) 75%, 
+                rgba(252,208,161,0.4) 87%, 
+                rgba(11,74,66,1) 100%);
+            
+        }
+        a {
+            text-decoration: none;
+        }
+        .navbar {
+            width: 100%;
+            text-align: center;
+            padding: 0px 0;
+            background-color: #fcd0a1;
+            border-bottom: solid 2px #0B4A42;
+            display: flex;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+        
+        .navbar_links {
+            color: #0B4A42;
+            font-size: 20px;
+            margin: 0;
+            display: flex;
+            width: 100%;
+            gap: 0.25rem
+        }
+        
+        .navbar_links a { 
+            text-align: center;
+            background-color: rgba(252, 208, 161, 0.1);
+            padding: 10px 20px;
+            color: #0B4A42;
+            width: fit-content;
+            font-size: 20px;
+            text-decoration: none;        
+        }
+        
+        .navbar_links a:last-child {
+            position: absolute;
+            right: 0;
+        }
+        
+        .heading {
+            width: 100%;
+            padding: 2% 0;
+            height: 500px;            
+            border: solid 1px #000;
+            padding-right: 60%;
+            box-sizing: border-box;
+            background: linear-gradient(to left,
+             rgba(255, 255, 255, 0) 0,
+             rgb(0, 0, 0) 80%), 
+             url('{% static "recipes/images/lemon-bg-med.jpg" %}') no-repeat;
+             background-position: center;
+             background-size: cover;
+        }
+
+        .sub-heading {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .links {
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 5%;
+            width: 60%;
+            justify-items: center;
+        }
+        
+        .link-button {
+            position: relative;
+            text-align: center;
+            background-color: rgba(11, 74, 66, 0.1);
+            border: solid;
+            padding: 10px 20px;
+            color: #FFC4EB;
+            width: 100%;
+            font-size: 30px;
+            text-decoration: none;
+            margin-top: 2%;
+            margin-bottom: 3%;
+        }
+
+        hr {
+            height: 2px; 
+            width: 80%; 
+            background-color: #0B4A42; 
+            border: none;
+        }
+        h2 {
+            color: #FFC4EB;
+            font-size: 50px;
+            text-align: center;
+            margin: 2%;
+        }
+
+        h1 {
+            color: #FFC4EB;
+            font-size: 50px;
+            text-align: center;
+            margin: 2%;
+            font-family: 'Great Vibes', cursive; 
+            font-size: 100px;
+        }
+        .logout-button {
+            text-align: center;
+            background-color: rgba(11, 74, 66, 0.5);
+            border: solid;
+            padding: 10px 20px;
+            color: #FFC4EB;
+            width: 20%;
+            font-size: 30px;
+            text-decoration: none;
+            margin-top: 2%;
+            margin-bottom: 2%;
+        }
+
+        .recipe-card {
+        width: 80%;
+        max-width: 800px;
+        margin: 5% auto;
+        background-color: #FFC4EB;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0px 4px 12px rgba(255, 255, 255, 0.2);
+        text-align: center;
+    }
+
+    .recipe-card form {
+        text-align: left;
+        margin-right: 2%;
+    }
+
+    .recipe-card label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .recipe-card input[type="text"],
+    .recipe-card input[type="number"],
+    .recipe-card select,
+    .recipe-card textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    .recipe-card .form-group {
+        margin-bottom: 15px;
+    }
+
+    .recipe-card button[type="submit"] {
+        background-color: rgba(11, 74, 66, 1);
+        border: solid;
+        padding: 10px 20px;
+        color: #FFC4EB;
+        width: 20%;
+        font-size: 20px;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .recipe-card a {
+        background-color: rgba(11, 74, 66, 1);
+        border: solid;
+        padding: 10px 20px;
+        color: #FFC4EB;
+        width: 20%;
+        font-size: 20px;
+        text-decoration: none;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+
+    .top-button {
+            text-align: center;
+            background-color: rgba(11, 74, 66, 0.5);
+            border: solid;
+            padding: 10px 20px;
+            color: #FFC4EB;
+            width: 20%;
+            font-size: 30px;
+            text-decoration: none;
+            margin-top: 4%;
+            margin-bottom: 2%;
+        }
+        
+        </style>
+</head>
+
+<body>
+
+   
+
+    <navbar class="navbar">
+        <div class="navbar_links">
+            <a href="{% url 'recipes:about-me' %}" >About Me</a>
+            <a href="{% url 'recipes:search' %}" >Search</a>
+            <a href="{% url 'recipes:add-recipe' %}" >Add Recipe</a>
+            <a href="{% url 'recipes:list' %}">Home</a>
+            <a href="{% url 'logout' %}" >Logout</a>
+        </div>
+    </navbar>
+    
+    <div class="heading">
+        <div class="sub-heading">
+                <h1>Lemonshed</h1>
+            <div class="sub-heading">
+                <a href="{% url 'recipes:search' %}" class="link-button">Search by Ingredients</a>
+                <a href="{% url 'recipes:list' %}" class="link-button">View All Recipes</a>
+            </div>
+        </div>
+    </div>
+    
+        <hr>
+    <div class="recipe-card">
+        <h2 style="color: #0B4A42;">Add Recipe</h2>
+        <form method="POST" action="{% url 'recipes:add-recipe' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div>
+                <label for="{{ form.name.id_for_label }}">Recipe Name</label>
+                {{ form.name }}
+            </div>
+            <div>
+                <label for="{{ form.ingredients.id_for_label }}">Ingredients</label>
+                {{ form.ingredients }}
+            </div>
+            <div>
+                <label for="{{ form.cooking_time.id_for_label }}">Cooking Time (minutes)</label>
+                {{ form.cooking_time }}
+            </div>
+            <div>
+                <label for="{{ form.type.id_for_label }}">Recipe Type</label>
+                {{ form.type }}
+            </div>
+            <div>
+                <label for="{{ form.method.id_for_label }}">Recipe Method</label>
+                {{ form.method }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.pic.id_for_label }}">Image</label>
+                {{ form.pic }}
+            </div>
+            <!-- Add more form fields for other recipe details if needed -->
+            <button type="submit">Save</button>
+            <a href="{% url 'recipes:list' %}">Cancel</a>
+        </form>
+    </div>
+</body>
+</html>

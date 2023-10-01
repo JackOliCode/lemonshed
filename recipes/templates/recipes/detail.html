@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recipe Details</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: 
+                linear-gradient(90deg, 
+                rgba(11,74,66,1) 0%, 
+                rgba(252,208,161,0.4) 13%, 
+                rgba(255,255,255,1) 25%, 
+                rgba(255,255,255,1) 50%, 
+                rgba(255,255,255,1) 75%, 
+                rgba(252,208,161,0.4) 87%, 
+                rgba(11,74,66,1) 100%);
+        }
+        .recipe-card {
+            width: 80%;
+            max-width: 800px;
+            margin: 5% auto;
+            background-color: #FFC4EB;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 4px 12px rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+        .recipe-card img {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 2%;
+        }
+        .recipe-details {
+            text-align: left;
+            padding: 10px 0;
+            font-size: 16px;
+        }
+        .back-button {
+            margin-top: 5%;
+            background-color: rgba(11, 74, 66, 1);
+            border: solid;
+            padding: 10px 20px;
+            color: #FFC4EB;
+            width: 20%;
+            font-size: 30px;
+            text-decoration: none;
+         }
+    </style>
+</head>
+<body>
+    <div class="recipe-card">
+        
+        <img src="{{ object.pic.url }}" alt="Recipe Image">
+        <h2>{{ object.name }}</h2>
+        <div class="recipe-details">
+            <b>Ingredients:</b> {{ object.ingredients }} <br>
+            <b>Cooking Time:</b> {{ object.cooking_time }} <br>
+            <b>Meal Type:</b> {{ object.type }} <br>
+            <b>Difficulty:</b> {{ object.calculate_difficulty }} <br>
+            <b>Method:</b> {{ object.method|safe }} <br>
+        </div>
+        <br>
+        <a href="javascript:history.back()" class="back-button">Back</a>
+    </div>
+</body>
+</html>

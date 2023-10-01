@@ -1,0 +1,222 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About Me</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgb(11,74,66);
+            background: 
+                linear-gradient(90deg, 
+                rgba(11,74,66,1) 0%, 
+                rgba(252,208,161,0.4) 13%, 
+                rgba(255,255,255,1) 25%, 
+                rgba(255,255,255,1) 50%, 
+                rgba(255,255,255,1) 75%, 
+                rgba(252,208,161,0.4) 87%, 
+                rgba(11,74,66,1) 100%);
+            
+        }
+        a {
+            text-decoration: none;
+        }
+        .navbar {
+            width: 100%;
+            text-align: center;
+            padding: 0px 0;
+            background-color: #fcd0a1;
+            border-bottom: solid 2px #0B4A42;
+            display: flex;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+        
+        .navbar_links {
+            color: #0B4A42;
+            font-size: 20px;
+            margin: 0;
+            display: flex;
+            width: 100%;
+            gap: 0.25rem
+        }
+
+        .navbar_links a { 
+            text-align: center;
+            background-color: rgba(252, 208, 161, 0.1);
+            padding: 10px 20px;
+            color: #0B4A42;
+            width: fit-content;
+            font-size: 20px;
+            text-decoration: none;        
+        }
+
+        .navbar_links a:last-child {
+            position: absolute;
+            right: 0;
+        }
+    
+    .heading {
+        width: 100%;
+        padding: 2% 0;
+        height: 100vh;
+        border: solid 1px #000;
+        padding-right: 60%;
+        box-sizing: border-box;
+        background: linear-gradient(to left, rgba(255, 255, 255, 0) 0, rgb(0, 0, 0) 80%), url(/static/recipes/images/jack-eating.jpg) no-repeat;
+            background-size: cover;
+    }
+
+    .sub-heading {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+
+    .links {
+        display: grid; 
+        grid-template-columns: 1fr 1fr; 
+        gap: 5%;
+        width: 60%;
+        justify-items: center;
+    }
+    
+    .link-button {
+            position: relative;
+            text-align: center;
+            background-color: rgba(11, 74, 66, 0.1);
+            border: solid;
+            padding: 10px 20px;
+            color: #FFC4EB;
+            width: 100%;
+            font-size: 30px;
+            text-decoration: none;
+            margin-top: 2%;
+            margin-bottom: 3%;
+        }
+
+    hr {
+        height: 2px; 
+        width: 80%; 
+        background-color: #0B4A42; 
+        border: none;
+    }
+
+    .top-button {
+            text-align: center;
+            background-color: rgba(11, 74, 66, 0.5);
+            border: solid;
+            padding: 10px 20px;
+            color: #FFC4EB;
+            width: 20%;
+            font-size: 30px;
+            text-decoration: none;
+            margin-top: 4%;
+            margin-bottom: 2%;
+        }
+
+        h2 {
+            color: #FFC4EB;
+            font-size: 50px;
+            text-align: center;
+            margin: 2%;
+        }
+
+        h1 {
+            color: #FFC4EB;
+            font-size: 50px;
+            text-align: center;
+            margin: 2%;
+            font-family: 'Great Vibes', cursive; 
+            font-size: 70px;
+        }
+
+        .social-links {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-left: 3%;
+            margin-top: 3%;
+        }
+
+        .social-links a {
+            width: 100px;
+            
+        }
+        
+    </style>
+</head>
+
+<body>
+    <navbar class="navbar">
+        <div class="navbar_links">
+            <a href="{% url 'recipes:about-me' %}" >About Me</a>
+            <a href="{% url 'recipes:search' %}" >Search</a>
+            <a href="{% url 'recipes:add-recipe' %}" >Add Recipe</a>
+            <a href="{% url 'recipes:list' %}">Home</a>
+            <a href="{% url 'logout' %}" >Logout</a>
+        </div>
+    </navbar>
+
+    <div class="heading">
+
+
+
+        
+        <h2>A little bit about me..</h2>
+        
+    
+    <div  style="display: flex; flex-direction: column; margin-left: 3%;">
+        <p style="color: #FFC4EB;">My name is Jack, and while I love food and drink, it's coding that I've been studying for the past year.
+            It's been a busy few months learning how to code. I'm starting to get the hang of it and if you check out some of my links below,
+        you'll be able to find some of the stuff I have been working on. </p>
+    </div>
+
+    <div  style="display: flex; flex-direction: column; margin-left: 3%;">
+        <p style="color: #FFC4EB;">For this project, I took some of the skills I had learnt in my python achievement and combined
+        them with new learning and Django to make this website. Then it was just a bit of CSS and HTML for good measure and the JavaScript 
+    is on the way. One day soon, this text box will disappear when you stop hovering over it. Cool eh?  </p>
+    </div>
+
+    <div  style="display: flex; flex-direction: column; margin-left: 3%;">
+        <p style="color: #FFC4EB;">Anyway, thanks for humouring me and if you got this far, why not follow the links below or better yet,
+        drop me an email and let me know what you think of this page or my other work and I'm more than happy to discuss future projects! Speak soon!  </p>
+    </div>
+
+    <div class="social-links">
+        <a href="https://github.com/JackOliCode" target="_blank">
+            <img src="{% static 'recipes/images/github-svgrepo-com.svg' %}" alt="GitHub Logo" style="width: 100px;">
+        </a>
+        
+        <a href="https://www.linkedin.com/in/jack-oliver-nz/" target="_blank">
+            <img src="{% static 'recipes/images/linkedin-svgrepo-com.svg' %}" alt="LinkedIn Logo" style="width: 100px;">
+        </a>
+        <a href="https://twitter.com/?lang=en" target="_blank">
+            <img src="{% static 'recipes/images/twitter-svgrepo-com.svg' %}" alt="Twitter Logo" style="width: 100px;">
+        </a>
+        <a href="https://jackolicode.github.io/Portfolio-website/index" target="_blank">
+            <img src="{% static 'recipes/images/J.O-Logo.png' %}" alt="Portfolio Logo" style="width: 100px;">
+        </a>
+        <a href="mailto:jack.v.oliver@gmail.com" target="_blank">
+            <img src="{% static 'recipes/images/email-svgrepo-com.svg' %}" alt="Email link" style="width: 100px;">
+        </a>
+    </div>
+    
+</div>
+
+
+
+
+    
+
+
+</body>

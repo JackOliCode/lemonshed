@@ -1,0 +1,72 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Log-In</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('{% static "recipes/images/welcome.jpg" %}');
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+        }
+        .login-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #FFC4EB;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .login-text {
+            font-size: 50px;
+        }
+        .login-button {
+            margin-top: 2%;
+            background-color: rgba(11, 74, 66, 0.1);
+            border: solid;
+            padding: 10px 20px;
+            color: #FFC4EB;
+            width: 20%;
+            font-size: 30px;
+            text-decoration: none;
+
+        }
+        .form_style {
+            width: 100%;
+            font-size: 30px;
+            display: contents;
+        }
+        input{
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>    
+</head>
+
+<body>
+    <div class="login-container">
+        <h1 class="login-text">Enter your details below</h1>        
+
+        {% if error_message %}
+        {{error_message}}
+        {% endif %}
+
+                                        
+        <form action="" class="form_style" method="POST" >
+                                        {% comment %} add Django security token {% endcomment %}
+        {% csrf_token %}   
+
+                                            {% comment %} print form received from view  {% endcomment %}
+        {{form}}  
+        <br>       
+        <button type="submit" class="login-button">Go</button>
+        </form>
+        
+    </div>
+</body>

@@ -1,0 +1,57 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Recipe App</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('{% static "recipes/images/welcome.jpg" %}');
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: #FFC4EB;
+            font-size: 50px;
+            text-align: center;
+            margin: 2%;
+            font-family: 'Great Vibes', cursive; 
+            font-size: 70px;
+        }
+        .welcome-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #FFC4EB;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .welcome-text {
+            font-size: 100px;
+        }
+        .login-button {
+            background-color: rgba(11, 74, 66, 0.1);
+            border: solid;
+            padding: 10px 20px;
+            color: #FFC4EB;
+            width: 20%;
+            font-size: 30px;
+            text-decoration: none;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome-container">
+        <h1 class="welcome-text">Lemonshed</h1>
+        
+        <a class="login-button" href="{% url 'login' %}">Login</a>
+    </div>
+</body>
+</html>

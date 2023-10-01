@@ -1,0 +1,82 @@
+a {
+    text-decoration: none;
+}
+.navbar {
+    width: 100%;
+    text-align: center;
+    padding: 0px 0;
+    background-color: #fcd0a1;
+    border-bottom: solid 2px #0B4A42;
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.navbar_links {
+    color: #0B4A42;
+    font-size: 20px;
+    margin: 0;
+    display: flex;
+    width: 100%;
+    gap: 0.25rem
+}
+
+.navbar_links a { 
+    text-align: center;
+    background-color: rgba(252, 208, 161, 0.1);
+    padding: 10px 20px;
+    color: #0B4A42;
+    width: fit-content;
+    font-size: 20px;
+    text-decoration: none;        
+}
+
+.navbar_links a:last-child {
+    position: absolute;
+    right: 0;
+}
+
+.heading {
+    width: 100%;
+    padding: 2% 0;
+    height: 500px;            
+    border: solid 1px #000;
+    padding-right: 60%;
+    box-sizing: border-box;
+    background: linear-gradient(to left,
+     rgba(255, 255, 255, 0) 0,
+     rgb(0, 0, 0) 80%), 
+     url('{% static "recipes/images/lemon-bg-med.jpg" %}') no-repeat;
+     background-position: center;
+     background-size: cover;
+}
+
+.links {
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 5%;
+    width: 60%;
+    justify-items: center;
+}
+
+.link-button {
+    position: relative;
+    text-align: center;
+    background-color: rgba(11, 74, 66, 0.1);
+    border: solid;
+    padding: 10px 20px;
+    color: #FFC4EB;
+    width: 60%;
+    font-size: 30px;
+    text-decoration: none;
+    margin-top: 2%;
+    margin-bottom: 1%;
+    left: 100px;
+}
+hr {
+    height: 2px; 
+    width: 80%; 
+    background-color: #0B4A42; 
+    border: none;
+}
