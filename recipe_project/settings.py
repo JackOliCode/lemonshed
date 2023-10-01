@@ -26,7 +26,7 @@ SECRET_KEY = SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY','django-insecure-ml
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['lemonshed.herokuapp.com']
+ALLOWED_HOSTS = ['lemonshed-5a988e172e80.herokuapp.com']
 
 
 # Application definition
