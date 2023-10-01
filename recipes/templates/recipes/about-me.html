@@ -5,6 +5,7 @@
 <head>
     <title>About Me</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
         body {
@@ -153,6 +154,41 @@
             width: 100px;
             
         }
+
+        .bio_p {
+            display: flex; 
+            flex-direction: column; 
+            margin-left: 3%;
+
+        }
+
+        .bio-container {
+            display: flex; 
+            flex-direction: column;
+        }
+
+        @media (max-width: 945px) {
+            .social-links {
+                position: absolute;
+                bottom: 0;
+            }
+        }
+
+        @media (max-width: 660px) {
+            .bio-container {
+                width: 300px;
+            }
+            .navbar_links a {
+            font-size: 15px;
+            padding: 10px 2px;
+        }
+    }
+
+    @media (max-width: 660px) {
+        .social-links {
+            display: none;
+        }
+    }
         
     </style>
 </head>
@@ -170,48 +206,46 @@
 
     <div class="heading">
 
+        <div class="bio-container">
+                <h2>A little bit about me..</h2>
+                
+            
+            <div  class="bio_p">
+                <p style="color: #FFC4EB;">My name is Jack, and while I love food and drink, it's coding that I've been studying for the past year.
+                    It's been a busy few months learning how to code. I'm starting to get the hang of it and if you check out some of my links below,
+                you'll be able to find some of the stuff I have been working on. </p>
+            </div>
 
+            <div  class="bio_p">
+                <p style="color: #FFC4EB;">For this project, I took some of the skills I had learnt in my python achievement and combined
+                them with new learning and Django to make this website. Then it was just a bit of CSS and HTML for good measure and the JavaScript 
+            is on the way. One day soon, this text box will disappear when you stop hovering over it. Cool eh?  </p>
+            </div>
 
-        
-        <h2>A little bit about me..</h2>
-        
-    
-    <div  style="display: flex; flex-direction: column; margin-left: 3%;">
-        <p style="color: #FFC4EB;">My name is Jack, and while I love food and drink, it's coding that I've been studying for the past year.
-            It's been a busy few months learning how to code. I'm starting to get the hang of it and if you check out some of my links below,
-        you'll be able to find some of the stuff I have been working on. </p>
-    </div>
+            <div  class="bio_p">
+                <p style="color: #FFC4EB;">Anyway, thanks for humouring me and if you got this far, why not follow the links below or better yet,
+                drop me an email and let me know what you think of this page or my other work and I'm more than happy to discuss future projects! Speak soon!  </p>
+            </div>
 
-    <div  style="display: flex; flex-direction: column; margin-left: 3%;">
-        <p style="color: #FFC4EB;">For this project, I took some of the skills I had learnt in my python achievement and combined
-        them with new learning and Django to make this website. Then it was just a bit of CSS and HTML for good measure and the JavaScript 
-    is on the way. One day soon, this text box will disappear when you stop hovering over it. Cool eh?  </p>
-    </div>
-
-    <div  style="display: flex; flex-direction: column; margin-left: 3%;">
-        <p style="color: #FFC4EB;">Anyway, thanks for humouring me and if you got this far, why not follow the links below or better yet,
-        drop me an email and let me know what you think of this page or my other work and I'm more than happy to discuss future projects! Speak soon!  </p>
-    </div>
-
-    <div class="social-links">
-        <a href="https://github.com/JackOliCode" target="_blank">
-            <img src="{% static 'recipes/images/github-svgrepo-com.svg' %}" alt="GitHub Logo" style="width: 100px;">
-        </a>
-        
-        <a href="https://www.linkedin.com/in/jack-oliver-nz/" target="_blank">
-            <img src="{% static 'recipes/images/linkedin-svgrepo-com.svg' %}" alt="LinkedIn Logo" style="width: 100px;">
-        </a>
-        <a href="https://twitter.com/?lang=en" target="_blank">
-            <img src="{% static 'recipes/images/twitter-svgrepo-com.svg' %}" alt="Twitter Logo" style="width: 100px;">
-        </a>
-        <a href="https://jackolicode.github.io/Portfolio-website/index" target="_blank">
-            <img src="{% static 'recipes/images/J.O-Logo.png' %}" alt="Portfolio Logo" style="width: 100px;">
-        </a>
-        <a href="mailto:jack.v.oliver@gmail.com" target="_blank">
-            <img src="{% static 'recipes/images/email-svgrepo-com.svg' %}" alt="Email link" style="width: 100px;">
-        </a>
-    </div>
-    
+            <div class="social-links">
+                <a href="https://github.com/JackOliCode" target="_blank">
+                    <img src="{% static 'recipes/images/github-svgrepo-com.svg' %}" alt="GitHub Logo" style="width: 100px;">
+                </a>
+                
+                <a href="https://www.linkedin.com/in/jack-oliver-nz/" target="_blank">
+                    <img src="{% static 'recipes/images/linkedin-svgrepo-com.svg' %}" alt="LinkedIn Logo" style="width: 100px;">
+                </a>
+                <a href="https://twitter.com/?lang=en" target="_blank">
+                    <img src="{% static 'recipes/images/twitter-svgrepo-com.svg' %}" alt="Twitter Logo" style="width: 100px;">
+                </a>
+                <a href="https://jackolicode.github.io/Portfolio-website/index" target="_blank">
+                    <img src="{% static 'recipes/images/J.O-Logo.png' %}" alt="Portfolio Logo" style="width: 100px;">
+                </a>
+                <a href="mailto:jack.v.oliver@gmail.com" target="_blank">
+                    <img src="{% static 'recipes/images/email-svgrepo-com.svg' %}" alt="Email link" style="width: 100px;">
+                </a>
+            </div>
+        </div>
 </div>
 
 
