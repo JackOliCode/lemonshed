@@ -1,1 +1,1 @@
-web: gunicorn lemonshed.wsgi --log-file -
+web: gunicorn Lemonshed.wsgi --log-file -
