@@ -16,7 +16,7 @@ class Recipe (models.Model):
     cooking_time = models.FloatField(help_text='in minutes')
     ingredients = models.CharField(max_length=350)
     method = models.TextField(max_length=5000, default='The method for this recipe is coming soon')
-    type = models.CharField(max_length=9, choices=meal_type_choices, default='Other')
+    type = models.CharField(max_length=40, choices=meal_type_choices, default='Other')
     pic = models.ImageField(upload_to='recipes', default='no_picture.jpg')
 
     # calc difficulty function
