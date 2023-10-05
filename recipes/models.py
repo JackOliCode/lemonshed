@@ -37,11 +37,5 @@ class Recipe(models.Model):
     def get_absolute_url(self):
         return reverse('recipes:detail', kwargs={'pk': self.pk})
 
-    def pic_url(self):
-        if self.pic:
-            return settings.STATIC_URL + self.pic.url
-        else:
-            return settings.STATIC_URL + '.\static\recipes\images\no_picture.jpg'  # Provide a default image path
-
     def __str__(self):
         return str(self.name)
