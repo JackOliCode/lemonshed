@@ -291,10 +291,9 @@
         
         {% for object in object_list %}
         <div class="grid_tile">
-            <img src="{{ object.pic.url }}"  />
+            <img src="{{ object.pic_url }}"  />
             <a href="{{ object.get_absolute_url }}">{{ object.name }}</a>
         </div>
-        
         {% endfor %}
     </div>
 

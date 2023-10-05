@@ -1,17 +1,17 @@
 from django.db import models
-from django.shortcuts import reverse
+from django.urls import reverse
+from django.conf import settings
 
-meal_type_choices=(
-('Breakfast','Breakfast'),
-('Lunch', 'Lunch'),
-('Dinner', 'Dinner'),
-('Snack', 'Snack'),
-('Drink', 'Drink'),
-('Other', 'Other')
+meal_type_choices = (
+    ('Breakfast', 'Breakfast'),
+    ('Lunch', 'Lunch'),
+    ('Dinner', 'Dinner'),
+    ('Snack', 'Snack'),
+    ('Drink', 'Drink'),
+    ('Other', 'Other')
 )
 
-#model below
-class Recipe (models.Model):
+class Recipe(models.Model):
     name = models.CharField(max_length=120)
     cooking_time = models.FloatField(help_text='in minutes')
     ingredients = models.CharField(max_length=350)
@@ -19,25 +19,29 @@ class Recipe (models.Model):
     type = models.CharField(max_length=40, choices=meal_type_choices, default='Other')
     pic = models.ImageField(upload_to='recipes', default='no_picture.jpg')
 
-    # calc difficulty function
-
     def calculate_difficulty(self):
-            num_ingredients = len(self.ingredients.split(','))
-            if self.cooking_time < 10:
-                if num_ingredients < 4:
-                    difficulty = "Easy"
-                else:
-                    difficulty = "Medium"
+        num_ingredients = len(self.ingredients.split(','))
+        if self.cooking_time < 10:
+            if num_ingredients < 4:
+                difficulty = "Easy"
             else:
-                if num_ingredients < 4:
-                    difficulty = "Intermediate"
-                else:
-                    difficulty = "Hard"
+                difficulty = "Medium"
+        else:
+            if num_ingredients < 4:
+                difficulty = "Intermediate"
+            else:
+                difficulty = "Hard"
 
-            return difficulty
+        return difficulty
     
     def get_absolute_url(self):
-       return reverse ('recipes:detail', kwargs={'pk': self.pk})
+        return reverse('recipes:detail', kwargs={'pk': self.pk})
+
+    def pic_url(self):
+        if self.pic:
+            return settings.STATIC_URL + self.pic.url
+        else:
+            return settings.STATIC_URL + '.\static\recipes\images\no_picture.jpg'  # Provide a default image path
 
     def __str__(self):
         return str(self.name)
